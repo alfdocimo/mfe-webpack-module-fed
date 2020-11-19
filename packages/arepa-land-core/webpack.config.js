@@ -40,6 +40,7 @@ module.exports = {
 
       remotes: {
         arepaLandGridModule: "arepaLandGridModule",
+        arepaLandViewerModule: "arepaLandViewerModule",
       },
 
       shared: ["react", "react-dom"],

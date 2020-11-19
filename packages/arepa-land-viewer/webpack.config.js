@@ -13,37 +13,41 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3002/",
   },
 
   resolve: {
-    extensions: [".jsx", ".js", ".json"],
+    extensions: [".svelte", ".js", ".json"],
   },
 
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: [require.resolve("@babel/preset-react")],
+        test: /\.(svelte)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "svelte-loader",
+          options: {
+            externalDependencies: true,
+          },
         },
+      },
+      {
+        test: /\.md$/,
+        loader: "raw-loader",
       },
     ],
   },
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "arepaLandGridModule",
-      library: { type: "var", name: "arepaLandGridModule" },
-      filename: "arepaLandGridModule.js",
-
+      name: "arepaLandViewerModule",
+      library: { type: "var", name: "arepaLandViewerModule" },
+      filename: "arepaLandViewerModule.js",
       exposes: {
-        "./Grid": "./src/Grid",
-        "./store": "./src/store/index.js",
+        "./View": "./src/view-spa.js",
       },
-
-      shared: ["react", "react-dom", "single-spa-react"],
+      shared: [],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
