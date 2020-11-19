@@ -40,6 +40,7 @@ module.exports = {
 
       exposes: {
         "./Grid": "./src/Grid",
+        "./store": "./src/store/index.js",
       },
 
       shared: ["react", "react-dom"],
