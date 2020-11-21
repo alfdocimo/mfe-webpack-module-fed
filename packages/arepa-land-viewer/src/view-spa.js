@@ -3,6 +3,7 @@ import View from "./View.svelte";
 
 const svelteLifecycles = singleSpaSvelte({
   component: View,
+  props: { someData: "data" },
 });
 
 export const bootstrap = svelteLifecycles.bootstrap;

@@ -44,10 +44,15 @@ module.exports = {
       name: "arepaLandViewerModule",
       library: { type: "var", name: "arepaLandViewerModule" },
       filename: "arepaLandViewerModule.js",
+
+      remotes: {
+        arepaLandGridModule: "arepaLandGridModule",
+      },
+
       exposes: {
         "./View": "./src/view-spa.js",
       },
-      shared: [],
+      shared: ["zustand"],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

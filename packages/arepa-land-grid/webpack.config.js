@@ -43,7 +43,7 @@ module.exports = {
         "./store": "./src/store/index.js",
       },
 
-      shared: ["react", "react-dom", "single-spa-react"],
+      shared: ["react", "react-dom", "single-spa-react", "zustand"],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

@@ -2,8 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 
+import { useTodos } from "./store";
+
 export default function Grid({ text }) {
-  return <div>I am a grid - {text}</div>;
+  const { fetchTodos } = useTodos();
+
+  return (
+    <div>
+      I am a grid - {text}
+      welcome to arepaland grid!
+      <button onClick={() => fetchTodos()}>
+        click me to fetch todos from the grid module
+      </button>
+    </div>
+  );
 }
 
 const gridLifeCycles = singleSpaReact({
