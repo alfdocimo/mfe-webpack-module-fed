@@ -24,7 +24,10 @@
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && surge ./ arepa-land-grid.surge.sh",
     "serve": "serve dist -p 3001"
+  },
+  "devDependencies": {
+    "surge": "^0.21.7"
   }
 }

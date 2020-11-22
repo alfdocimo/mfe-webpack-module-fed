@@ -18,11 +18,12 @@
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && surge ./ arepa-land-viewer.surge.sh",
     "serve": "serve dist -p 3002"
   },
   "devDependencies": {
     "raw-loader": "^4.0.0",
+    "surge": "^0.21.7",
     "svelte-loader": "^2.13.6"
   }
 }
