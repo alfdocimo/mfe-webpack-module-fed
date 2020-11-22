@@ -15,7 +15,6 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "serve": "wsrun --parallel serve",
-    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\"",
-    "ci": "yarn build && yarn serve"
+    "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   }
 }

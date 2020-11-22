@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const path = require("path");
 
-module.exports = {
+module.exports = (_, { mode = "development" }) => ({
   entry: "./src/index.js",
   cache: false,
 
@@ -13,7 +14,10 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath:
+      mode === "production"
+        ? path.resolve(__dirname, "dist/")
+        : "http://localhost:3000/",
   },
 
   resolve: {
@@ -46,7 +50,7 @@ module.exports = {
       shared: ["react", "react-dom"],
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: `./public/index.${mode}.html`,
     }),
   ],
-};
+});
