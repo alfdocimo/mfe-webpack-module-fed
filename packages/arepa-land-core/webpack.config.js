@@ -6,7 +6,6 @@ module.exports = (_, { mode = "development" }) => ({
   entry: "./src/index.js",
   cache: false,
 
-  mode: "development",
   devtool: "source-map",
 
   optimization: {
@@ -16,7 +15,7 @@ module.exports = (_, { mode = "development" }) => ({
   output: {
     publicPath:
       mode === "production"
-        ? path.resolve(__dirname)
+        ? path.resolve(__dirname, "./")
         : "http://localhost:3000/",
   },
 
