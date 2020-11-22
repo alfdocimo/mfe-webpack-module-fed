@@ -1,11 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-module.exports = {
+module.exports = (_, { mode }) => ({
   entry: "./src/index.js",
   cache: false,
 
-  mode: "development",
   devtool: "source-map",
 
   optimization: {
@@ -13,7 +12,10 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath:
+      mode === "production"
+        ? "https://arepa-land-viewer.surge.sh/dist/"
+        : "http://localhost:3002/",
   },
 
   resolve: {
@@ -55,7 +57,7 @@ module.exports = {
       shared: ["zustand"],
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: `./public/index.${mode}.html`,
     }),
   ],
-};
+});
