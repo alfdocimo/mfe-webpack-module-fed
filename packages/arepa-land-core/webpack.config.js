@@ -13,10 +13,7 @@ module.exports = (_, { mode = "development" }) => ({
   },
 
   output: {
-    publicPath:
-      mode === "production"
-        ? path.resolve(__dirname, "./")
-        : "http://localhost:3000/",
+    publicPath: mode === "production" ? "./" : "http://localhost:3000/",
   },
 
   resolve: {
