@@ -27,6 +27,7 @@ module.exports = {
         loader: require.resolve("babel-loader"),
         options: {
           presets: [require.resolve("@babel/preset-react")],
+          plugins: ["@babel/plugin-transform-runtime"],
         },
       },
     ],
@@ -43,7 +44,14 @@ module.exports = {
         "./store": "./src/store/index.js",
       },
 
-      shared: ["react", "react-dom", "single-spa-react", "zustand"],
+      shared: [
+        "react",
+        "react-dom",
+        "single-spa-react",
+        "zustand",
+        "@babel/plugin-transform-runtime",
+        "@babel/runtime",
+      ],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
