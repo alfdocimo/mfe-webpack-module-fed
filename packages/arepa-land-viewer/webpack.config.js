@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-module.exports = (_, { mode }) => ({
+module.exports = (_, { mode = "development" }) => ({
   entry: "./src/index.js",
   cache: false,
 
