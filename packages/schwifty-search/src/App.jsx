@@ -1,10 +1,10 @@
 import React from "react";
-import Grid from "./Grid";
+import SearchPanel from "./SearchPanel";
 
 function App() {
   return (
     <h1>
-      <Grid text="Arepas" />
+      <SearchPanel />
     </h1>
   );
 }

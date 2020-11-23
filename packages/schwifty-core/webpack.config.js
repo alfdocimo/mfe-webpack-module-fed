@@ -34,13 +34,13 @@ module.exports = (_, { mode = "development" }) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "arepaLandCoreModule",
-      library: { type: "var", name: "arepaLandCoreModule" },
-      filename: "arepaLandCoreModule.js",
+      name: "schwiftyCoreModule",
+      library: { type: "var", name: "schwiftyCoreModule" },
+      filename: "schwiftyCoreModule.js",
 
       remotes: {
-        arepaLandGridModule: "arepaLandGridModule",
-        arepaLandViewerModule: "arepaLandViewerModule",
+        schwiftySearchModule: "schwiftySearchModule",
+        schwiftyViewerModule: "schwiftyViewerModule",
       },
 
       shared: ["react", "react-dom"],

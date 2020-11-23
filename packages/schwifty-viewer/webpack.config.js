@@ -14,7 +14,7 @@ module.exports = (_, { mode = "development" }) => ({
   output: {
     publicPath:
       mode === "production"
-        ? "https://arepa-land-viewer.surge.sh/dist/"
+        ? "https://schwifty-viewer.surge.sh/dist/"
         : "http://localhost:3002/",
   },
 
@@ -43,12 +43,12 @@ module.exports = (_, { mode = "development" }) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "arepaLandViewerModule",
-      library: { type: "var", name: "arepaLandViewerModule" },
-      filename: "arepaLandViewerModule.js",
+      name: "schwiftyViewerModule",
+      library: { type: "var", name: "schwiftyViewerModule" },
+      filename: "schwiftyViewerModule.js",
 
       remotes: {
-        arepaLandGridModule: "arepaLandGridModule",
+        schwiftySearchModule: "schwiftySearchModule",
       },
 
       exposes: {

@@ -1,5 +1,5 @@
 {
-  "name": "arepa-land-viewer",
+  "name": "schwifty-viewer",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --mode production && surge ./ arepa-land-viewer.surge.sh",
+    "build": "webpack --mode production && surge ./ schwifty-viewer.surge.sh",
     "serve": "serve dist -p 3002"
   },
   "devDependencies": {

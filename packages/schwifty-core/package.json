@@ -1,5 +1,5 @@
 {
-  "name": "arepa-land-core",
+  "name": "schwifty-core",
   "version": "1.0.0",
   "description": "Core module for the application",
   "main": "src/index.js",

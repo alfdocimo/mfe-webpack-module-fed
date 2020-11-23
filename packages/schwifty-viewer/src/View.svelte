@@ -8,7 +8,7 @@
   };
 
   onMount(async () => {
-    await import("arepaLandGridModule/store").then(({ useTodos }) => {
+    await import("schwiftySearchModule/store").then(({ useTodos }) => {
       ({ todos, fetchTodos } = useTodos.getState());
       useTodos.subscribe(updateTodos);
     });

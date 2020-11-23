@@ -14,7 +14,7 @@ module.exports = (_, { mode }) => ({
   output: {
     publicPath:
       mode === "production"
-        ? "https://arepa-land-grid.surge.sh/dist/"
+        ? "https://schwifty-search.surge.sh/dist/"
         : "http://localhost:3001/",
   },
 
@@ -26,23 +26,45 @@ module.exports = (_, { mode }) => ({
     rules: [
       {
         test: /\.jsx?$/,
+        exclude: /node_modules/,
         loader: require.resolve("babel-loader"),
         options: {
           presets: [require.resolve("@babel/preset-react")],
           plugins: ["@babel/plugin-transform-runtime"],
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "arepaLandGridModule",
-      library: { type: "var", name: "arepaLandGridModule" },
-      filename: "arepaLandGridModule.js",
+      name: "schwiftySearchModule",
+      library: { type: "var", name: "schwiftySearchModule" },
+      filename: "schwiftySearchModule.js",
 
       exposes: {
-        "./Grid": "./src/Grid",
+        "./SearchPanel": "./src/SearchPanel",
         "./store": "./src/store/index.js",
       },
 
@@ -53,6 +75,9 @@ module.exports = (_, { mode }) => ({
         "zustand",
         "@babel/plugin-transform-runtime",
         "@babel/runtime",
+        "style-loader",
+        "css-loader",
+        "sass-loader",
       ],
     }),
     new HtmlWebpackPlugin({
