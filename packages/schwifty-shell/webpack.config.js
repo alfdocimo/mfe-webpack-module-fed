@@ -13,7 +13,10 @@ module.exports = (_, { mode = "development" }) => ({
   },
 
   output: {
-    publicPath: mode === "production" ? "./" : "http://localhost:3003/",
+    publicPath:
+      mode === "production"
+        ? "https://schwifty-shell.surge.sh/dist/"
+        : "http://localhost:3003/",
   },
 
   module: {
