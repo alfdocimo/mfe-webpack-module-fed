@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const path = require("path");
 
 module.exports = (_, { mode = "development" }) => ({
   entry: "./src/index.js",
@@ -41,6 +40,7 @@ module.exports = (_, { mode = "development" }) => ({
       remotes: {
         schwiftySearchModule: "schwiftySearchModule",
         schwiftyViewerModule: "schwiftyViewerModule",
+        schwiftyShellModule: "schwiftyShellModule",
       },
 
       shared: ["react", "react-dom"],

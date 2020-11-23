@@ -1,0 +1,17 @@
+@import "./reset.scss";
+
+.Schwifty {
+  &__Shell {
+    display: flex;
+    height: 100vh;
+
+    &__SearchModule {
+      background-color: red;
+    }
+
+    &__ViewerModule {
+      overflow: scroll;
+      width: 100%;
+    }
+  }
+}

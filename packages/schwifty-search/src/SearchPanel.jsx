@@ -5,16 +5,16 @@ import "./SearchPanel.scss";
 
 // import { useTodos } from "./store";
 
-export default function Grid({ text }) {
+export default function SearchPanel(props) {
   // const { fetchTodos } = useTodos();
 
-  return <div className="SearchPanel">Hello</div>;
+  return <div className="SearchPanel">epa</div>;
 }
 
 const gridLifeCycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Grid,
+  rootComponent: SearchPanel,
 });
 
 export const bootstrap = gridLifeCycles.bootstrap;
