@@ -8,6 +8,9 @@ Each package is deployed as an individual module on a CDN a then consumed on the
 - https://schwifty-viewer.surge.sh/dist/index.html
 - https://schwifty-shell.surge.sh/dist/index.html
 
+
+This is _currently_ a monorepo, but the idea is that each package can be separated into its own repo and consumed from a CDN through the core module. It uses Yarn Workspaces to boot up all modules for local development.
+
 ## Packages
 
 ### Search Module
