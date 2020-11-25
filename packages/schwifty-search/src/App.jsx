@@ -4,7 +4,7 @@ import SearchPanel from "./SearchPanel";
 function App() {
   return (
     <h1>
-      <SearchPanel>earaea</SearchPanel>
+      <SearchPanel>Get Schwifty!</SearchPanel>
     </h1>
   );
 }

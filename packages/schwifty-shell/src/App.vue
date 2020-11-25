@@ -3,8 +3,8 @@
 </style>
 
 <template>
-  <div>
-    <navabar title="Get Schwifty! 💯"></navabar>
+  <div class="Schwifty">
+    <Navabar title="Get Schwifty! 💯"></Navabar>
     <div class="Schwifty__Shell">
       <div class="Schwifty__Shell__SearchModule">
         <div id="single-spa-application:schwifty-search-module"></div>
@@ -13,15 +13,18 @@
         <div id="single-spa-application:schwifty-viewer-module"></div>
       </div>
     </div>
+    <Footer author="Alfredo Narvaez Docimo"></Footer>
   </div>
 </template>
 
 
 <script>
-import navabar from "./components/Navbar.vue";
+import Navabar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 export default {
   components: {
-    navabar,
+    Navabar,
+    Footer,
   },
 };
 </script>
