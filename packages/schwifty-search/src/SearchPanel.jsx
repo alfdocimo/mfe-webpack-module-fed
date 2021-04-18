@@ -13,28 +13,36 @@ export default function SearchPanel() {
   return (
     <div className="SearchPanel">
       <h1>Howdy from react!⚛️💙</h1>
-      <span>Name</span>
-      <input
-        value={character}
-        placeholder="Character's name"
-        onChange={(e) => setCharacter(e.target.value)}
-      />
+      <div className="SearchPanel__Input">
+        <p>Name</p>
+        <input
+          value={character}
+          placeholder="Character's name"
+          onChange={(e) => setCharacter(e.target.value)}
+        />
+      </div>
 
-      <span>Status</span>
-      <input
-        value={status}
-        placeholder="Alive, dead, unknown"
-        onChange={(e) => setStatus(e.target.value)}
-      />
+      <div className="SearchPanel__Input">
+        <p>Status</p>
+        <input
+          value={status}
+          placeholder="Alive, dead, unknown"
+          onChange={(e) => setStatus(e.target.value)}
+        />
+      </div>
 
-      <span>Gender</span>
-      <input
-        value={gender}
-        placeholder="Male, Female, Genderless"
-        onChange={(e) => setGender(e.target.value)}
-      />
+      <div className="SearchPanel__Input">
+        <p>Gender</p>
+        <input
+          value={gender}
+          placeholder="Male, Female, Genderless"
+          onChange={(e) => setGender(e.target.value)}
+        />
+      </div>
 
-      <button onClick={() => fetchCharacters(character, status, gender)}>
+      <button
+      className='SearchPanel__Search'
+      onClick={() => fetchCharacters(character, status, gender)}>
         Search!
       </button>
     </div>

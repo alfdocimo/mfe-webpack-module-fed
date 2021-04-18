@@ -41,6 +41,7 @@ export const useCharacters = create(
                   }
                 ) {
                   results {
+                    id
                     name
                     image
                   }

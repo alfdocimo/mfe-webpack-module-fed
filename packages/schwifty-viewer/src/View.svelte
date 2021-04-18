@@ -22,20 +22,12 @@
   });
 </script>
 
-<style>
-  .character-result-panel {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-</style>
-
 <div>
-  Hello from svelte! 🧡
+  <p>Hello from svelte! 🧡</p>
 
-  <button on:click={() => fetchCharacters('Morty')}>click me to fetch some
-    Morty's!</button>
+  <button class="btn-fetch" on:click={() => fetchCharacters("Morty")}
+    >click me to fetch some Morty's!</button
+  >
   {#if loading || !characters}
     Loading...
   {:else}
@@ -45,8 +37,30 @@
     </p>
     <ul class="character-result-panel">
       {#each characters as character}
-        <Card title={character.name} bg={character.image} />
+        <Card title={character.name} bg={character.image} id={character.id} />
       {/each}
     </ul>
   {/if}
 </div>
+
+<style>
+  .character-result-panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  p {
+    padding: 6px;
+  }
+
+  .btn-fetch {
+    background-color: #ff6663;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+  }
+</style>
