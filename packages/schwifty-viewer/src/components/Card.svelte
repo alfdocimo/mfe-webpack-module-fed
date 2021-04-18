@@ -1,12 +1,9 @@
 <script>
   export let title;
   export let bg;
-  export let id;
-
-  const nepe = () => console.log(id);
 </script>
 
-<div class="card" on:click={nepe}>
+<div class="card">
   <div class="card_image"><img src={bg} alt={`${title} image`} /></div>
   <div class="card_title title-container">
     <p>{title}</p>

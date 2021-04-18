@@ -36,7 +36,7 @@
       module federation
     </p>
     <ul class="character-result-panel">
-      {#each characters as character}
+      {#each characters as character (character.id)}
         <Card title={character.name} bg={character.image} id={character.id} />
       {/each}
     </ul>
